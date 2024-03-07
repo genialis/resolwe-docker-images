@@ -5,6 +5,13 @@ Change Log
 All notable changes to this project are documented in this file.
 This project adheres to `Semantic Versioning <http://semver.org/>`_.
 
+==========
+2024-03-07
+==========
+
+- Add ``h5py==3.10.0`` Python package to
+  ``resolwebio/common:4.1.1`` image
+
 
 ==========
 2023-11-16
