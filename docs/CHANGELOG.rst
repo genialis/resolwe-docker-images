@@ -6,6 +6,15 @@ All notable changes to this project are documented in this file.
 This project adheres to `Semantic Versioning <http://semver.org/>`_.
 
 ==========
+2025-02-11
+==========
+
+Changed
+-------
+- Add Dockerfile for Ubuntu 24.04
+
+
+==========
 2024-09-04
 ==========
 
