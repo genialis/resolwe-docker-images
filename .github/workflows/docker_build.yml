@@ -17,15 +17,20 @@ on:
           - 'rnaseq'
           - 'snpeff'
           - 'xengsort'
-        
+
+permissions:
+  id-token: write
+  contents: read
+
 env:
   REGISTRY: ${{ vars.REGISTRY }}
+  AWS_IAM_ROLE: ${{ vars.AWS_IAM_ROLE }}
   AWS_REGION: us-east-1
   DOCKERFILE: Dockerfile
 
 jobs:
   build:
-    runs-on: arc-runner
+    runs-on: public-docker-runner
     steps:
       - name: Reset Docker credentials store
         run: |
@@ -36,8 +41,8 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ vars.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: ${{ env.AWS_IAM_ROLE }}
+          role-session-name: GithubOIDCSession
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Login to AWS ECR
