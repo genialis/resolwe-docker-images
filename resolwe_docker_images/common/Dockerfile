@@ -1,11 +1,11 @@
-FROM public.ecr.aws/genialis/resolwebio/base:ubuntu-22.04-14112023
+FROM public.ecr.aws/genialis/resolwebio/base:ubuntu-24.04-20250203
 
 LABEL maintainer="Resolwe Bioinformatics authors https://github.com/genialis/resolwe-bio"
 
-LABEL version="4.1.1"
+LABEL version="5.0.0"
 
 # Force matplotlib backend to a headless one.
-ENV MPLBACKEND Agg
+ENV MPLBACKEND="Agg"
 
 # Additional files:
 COPY assets/ /opt/resolwebio/assets/
@@ -32,25 +32,9 @@ ONBUILD RUN export DEBIAN_FRONTEND=noninteractive && \
     xargs apt-get --no-install-recommends -y install \
     ; \
     fi && \
-    # Install Python packages.
-    if [ -f /var/cache/build/packages-python2.txt ]; then \
-    echo "Installing Python 2 packages..." && \
-    pip install --require-hashes --requirement /var/cache/build/packages-python2.txt \
-    ; \
-    fi && \
-    if [ -f /var/cache/build/packages-python2-stage2.txt ]; then \
-    echo "Installing stage 2 Python 2 packages..." && \
-    pip install --require-hashes --requirement /var/cache/build/packages-python2-stage2.txt \
-    ; \
-    fi && \
     if [ -f /var/cache/build/packages-python3.txt ]; then \
     echo "Installing Python 3 packages..." && \
-    pip3 install --require-hashes --requirement /var/cache/build/packages-python3.txt \
-    ; \
-    fi && \
-    if [ -f /var/cache/build/packages-python3-stage2.txt ]; then \
-    echo "Installing stage 2 Python 3 packages..." && \
-    pip3 install --require-hashes --requirement /var/cache/build/packages-python3-stage2.txt \
+    pip3 install --break-system-packages --ignore-installed --require-hashes --requirement /var/cache/build/packages-python3.txt \
     ; \
     fi && \
     # Build manual packages.

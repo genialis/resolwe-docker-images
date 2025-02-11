@@ -6,14 +6,8 @@ bzip2
 gawk
 hisat2
 pigz
-python2
-python3.10
-python3-numpy
-python3-six
-python3-sklearn
-python3-yaml
-r-base-core=4.4.1-*
-r-base-dev=4.4.1-*
+python3.12-venv
+
 seqtk
 tabix
 zip
@@ -22,21 +16,9 @@ zip
 default-jre
 libfindbin-libs-perl
 
-# Required for deeptools
-libpython3.10-dev
-
 # Required for MultiQC
 python3-setuptools
 
-# Required for R devtools. If you purge at least one, R will get
-# reinstalled and R version may no longer be what you hope it would be.
-libssl-dev
-libcurl4-openssl-dev
-zlib1g-dev
-build-essential
+# Needed to build Python packages
 python3-dev
 python3-wheel
-
-# Required for Samtools and R
-libbz2-dev
-liblzma-dev

@@ -12,6 +12,7 @@ This project adheres to `Semantic Versioning <http://semver.org/>`_.
 Changed
 -------
 - Add Dockerfile for Ubuntu 24.04
+- Remove R packages from ``resolwebio/common:5.0.0`` Docker image
 
 
 ==========
