@@ -13,6 +13,7 @@ Changed
 -------
 - Add Dockerfile for Ubuntu 24.04
 - Remove R packages from ``resolwebio/common:5.0.0`` Docker image
+- Remove R packages from ``resolwebio/rnaseq:7.0.0`` Docker image
 
 
 ==========

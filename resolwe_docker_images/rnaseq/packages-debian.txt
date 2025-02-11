@@ -1,27 +1,8 @@
 file
-libjpeg-dev
-libpng-dev
-build-essential
 genometools
-
-# required to build some R packages
-gfortran
-liblapack-dev
-libcurl4-openssl-dev
 
 # Python modules
 python3-dev
-python3-matplotlib
 
-# Required for tximport dependency GenomicFeatures
-libmariadb-dev-compat 
-libmariadb-dev
-
-# Required for DESeq2, tximport and XML
-libxml2
-libxml2-dev
-
-# Required for isal
-autoconf
-automake
-libtool
+# required by STAR
+libgomp1
