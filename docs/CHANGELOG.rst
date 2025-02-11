@@ -9,6 +9,10 @@ This project adheres to `Semantic Versioning <http://semver.org/>`_.
 2025-02-11
 ==========
 
+Added
+-----
+- Add ``resolwebio/rpkgs:1.0.0`` Docker image
+
 Changed
 -------
 - Add Dockerfile for Ubuntu 24.04

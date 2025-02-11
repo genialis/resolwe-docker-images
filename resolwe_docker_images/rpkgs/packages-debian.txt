@@ -1,0 +1,18 @@
+build-essential
+
+# required to build some R packages
+gfortran
+liblapack-dev
+libcurl4-openssl-dev
+
+# Required for tximport dependency GenomicFeatures
+libmariadb-dev-compat 
+libmariadb-dev
+
+# Required for DESeq2, tximport and XML
+libxml2
+libxml2-dev
+
+# Install R
+r-base-core=4.4.2-*
+r-base-dev=4.4.2-*
