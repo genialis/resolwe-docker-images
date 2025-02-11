@@ -12,6 +12,7 @@ This project adheres to `Semantic Versioning <http://semver.org/>`_.
 Added
 -----
 - Add ``resolwebio/rpkgs:1.0.0`` Docker image
+- Add ``resolwebio/salmon:1.0.0`` Docker image
 
 Changed
 -------

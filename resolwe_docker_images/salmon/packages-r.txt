@@ -1,0 +1,6 @@
+argparse
+
+# Bioconductor packages
+bioc::GenomicFeatures@1.58.0
+bioc::tximport@1.34.0
+bioc::txdbmaker
