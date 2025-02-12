@@ -13,6 +13,7 @@ Added
 -----
 - Add ``resolwebio/rpkgs:1.0.0`` Docker image
 - Add ``resolwebio/salmon:1.0.0`` Docker image
+- Add downsampled step to MultiQC report template
 
 Changed
 -------
