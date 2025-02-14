@@ -69,6 +69,7 @@ module_order:
         path_filters_exclude:
           - '*.rRNA.Log.final.out'
           - '*.globin.Log.final.out'
+          - '*.downsampled.Log.final.out'
     - star:
         name: 'STAR (rRNA)'
         info: >
@@ -86,6 +87,13 @@ module_order:
           reads in the sample.
         path_filters:
           - '*.globin.Log.final.out'
+    - star:
+        name: 'STAR (downsampled)'
+        info: >
+          This section of the report shows the alignment statistics after downsampling.
+          Input reads are randomly downsampled to the specified number of reads and aligned to the reference genome.
+        path_filters:
+          - '*.downsampled.Log.final.out'
     - samtools
     - qorts
     - rna_seqc

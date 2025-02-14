@@ -1,9 +1,16 @@
+build-essential
 software-properties-common
 
 # Required for Samtools
 libxml2-dev
 libxslt-dev
 
-# Required for R devtools
-libssl-dev
-libcurl4-openssl-dev
+# Required for Samtools
+libbz2-dev
+liblzma-dev
+
+# from -debian
+libfindbin-libs-perl
+
+# Required for installing bcftools dependency htslib
+zlib1g-dev

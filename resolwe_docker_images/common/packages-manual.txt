@@ -6,8 +6,6 @@ fastqc
 makedb-walt
 picard-tools
 qorts
-r-packages
 samtools
 subread
 bwa-mem2
-pip2

@@ -1,0 +1,6 @@
+# Required for some R packages
+libopenblas-dev
+libxml2-dev
+
+# Required by regtools
+cmake

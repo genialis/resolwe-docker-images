@@ -1,17 +1,23 @@
-FROM public.ecr.aws/genialis/resolwebio/base:ubuntu-24.04-20250203
+ARG BASE_IMAGE=public.ecr.aws/genialis/resolwe/base:20250203
+
+FROM ${BASE_IMAGE}
 
 LABEL maintainer="Resolwe Bioinformatics authors https://github.com/genialis/resolwe-bio"
 
-LABEL version="5.0.0"
+LABEL version="ubuntu-24.04-20250203"
 
-# Force matplotlib backend to a headless one.
-ENV MPLBACKEND="Agg"
+# Install base dependencies, which are needed for the common build helpers.
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update && \
+    apt-get --no-install-recommends -y install wget unzip dirmngr gpg-agent software-properties-common && \
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7 && \
+    wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc && \
+    add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/" && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
-# Additional files:
-COPY assets/ /opt/resolwebio/assets/
-
-# Cleanup any previus build requirement files except common.sh file
-ONBUILD RUN find /var/cache/build/ ! -type d ! -name 'common.sh' -delete
+# Add common build helpers.
+ADD common.sh /var/cache/build/packages-manual/common.sh
 
 # Package manifests and custom build scripts.
 ONBUILD ADD packages-*.txt /var/cache/build/
@@ -32,9 +38,15 @@ ONBUILD RUN export DEBIAN_FRONTEND=noninteractive && \
     xargs apt-get --no-install-recommends -y install \
     ; \
     fi && \
+    # Install Python packages.
     if [ -f /var/cache/build/packages-python3.txt ]; then \
     echo "Installing Python 3 packages..." && \
     pip3 install --break-system-packages --ignore-installed --require-hashes --requirement /var/cache/build/packages-python3.txt \
+    ; \
+    fi && \
+    if [ -f /var/cache/build/packages-python3-stage2.txt ]; then \
+    echo "Installing stage 2 Python 3 packages..." && \
+    pip3 install --require-hashes --requirement /var/cache/build/packages-python3-stage2.txt \
     ; \
     fi && \
     # Build manual packages.

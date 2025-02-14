@@ -1,0 +1,9 @@
+argparse@2.2.5
+# Bioconductor packages
+bioc::affy
+bioc::DESeq2
+bioc::DEXSeq
+bioc::edgeR
+bioc::GenomicFeatures
+bioc::rtracklayer
+bioc::tximport

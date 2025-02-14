@@ -1,0 +1,11 @@
+build-essential
+
+# required to build some R packages
+gfortran
+liblapack-dev
+libcurl4-openssl-dev
+liblzma-dev
+libbz2-dev
+libpng-dev
+libssl-dev
+libxml2-dev

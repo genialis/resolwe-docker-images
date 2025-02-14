@@ -17,6 +17,9 @@ on:
           - 'rnaseq'
           - 'snpeff'
           - 'xengsort'
+          - 'rpkgs'
+          - 'salmon'
+        
 
 permissions:
   id-token: write
