@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=public.ecr.aws/genialis/resolwe/base:20250203
+ARG BASE_IMAGE=public.ecr.aws/genialis/resolwe/base:ubuntu-24.04-20250203
 
 FROM ${BASE_IMAGE}
 
