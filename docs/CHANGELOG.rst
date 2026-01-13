@@ -16,6 +16,15 @@ Added
 
 
 ==========
+2025-09-15
+==========
+
+Changed
+-------
+- Upgrade the MultiQC to version 1.31 in ``resolwebio/common:5.1.0`` Docker image
+
+
+==========
 2025-02-11
 ==========
 

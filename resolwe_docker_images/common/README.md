@@ -18,7 +18,7 @@ Included tools:
 * FastQC (v0.12.1)
 * HISAT2 (2.2.1)
 * MultiQC (1.25.1)
-* QoRTs (1.3.0)
+* QoRTs (1.3.1)
 * Samtools (1.18)
 * Seqtk (1.4-r122)
 * Subread (2.0.1)
